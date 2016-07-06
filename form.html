@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Website Title</title>
+<link rel="stylesheet" type="text/css" media="all" href="public/styles/main.css" />
+<link rel="stylesheet" type="text/css" href="public/styles/jquery-ui-1.8.17.custom.css" />
+
+</script>
+</head>
+<body class="loan-app">
+<div id="formOffer">
+<div class="wrapper">
+	<div class="percentBar">
+		<div id="outText" class="text">0% Complete</div>
+		<div class="bg">
+			<div class="fill">
+				<div class="text"></div>
+			</div>
+		</div>
+	</div>
+	<div class="step1 selected">		
+		<header>
+			<h2 class="jumbo">Apply Now!</h2>
+			<p class="subtitle">No Obligation 2 Minute Application</p>
+		</header>
+		<form class="field-set long-form" id="step-1" method="post" action="/gateway/">
+			<div class="field-long col-1-2">
+				<label for="fname-1">First Name:</label>
+				<input type="text" class="input-text field-element required" name="fname" id="fname-1" />				
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-2">
+				<label for="lname-1">Last Name:</label>
+				<input type="text" class="input-text field-element required" name="lname" id="lname-1"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="last4ssn">Last 4 of SSN#:</label>
+				<input type="text" class="input-text field-element required" name="last4ssn" id="last4ssn"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long field-select col-1-3">
+				<label for="dobY1" class="is-active">Birth Year:</label>
+					<select  id="dobY1" class="required customSelectBox field-element" name="dobY1" >
+						<option value="" disabled="disabled" selected="selected">YYYY&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						<option>1994</option>
+						<option>1993</option>
+						<option>1992</option>
+						<option>1991</option>
+						<option>1990</option>
+						<option>1989</option>
+						<option>1988</option>
+						<option>1987</option>
+						<option>1986</option>
+						<option>1985</option>
+						<option>1984</option>
+						<option>1983</option>
+						<option>1982</option>
+						<option>1981</option>
+						<option>1980</option>
+						<option>1979</option>
+						<option>1978</option>
+						<option>1977</option>
+						<option>1976</option>
+						<option>1975</option>
+						<option>1974</option>
+						<option>1973</option>
+						<option>1972</option>
+						<option>1971</option>
+						<option>1970</option>
+						<option>1969</option>
+						<option>1968</option>
+						<option>1967</option>
+						<option>1966</option>
+						<option>1965</option>
+						<option>1964</option>
+						<option>1963</option>
+						<option>1962</option>
+						<option>1961</option>
+						<option>1960</option>
+					</select>
+					<div class="field-tooltip"></div>
+					<i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+					<span class="field-icon"></span>
+			</div>
+			<div class="field-long col-1-3">
+				<label for="zip-1">Zip Code:</label>
+				<input type="text" class="input-text field-element required" name="zip" value="" id="zip-1" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			<div class="disclaimer">
+				<div class="disclaimer-text">
+				By clicking the button below and submitting your form, you certify that you are at least 18 years old and agree to the <a href="#">E-consent</a>, <a href="#">Privacy Policy</a> & <a href="#">Terms of Use</a> that govern this web site and the service.
+				</div>
+			</div>
+			<div class="btn-wrapper">
+				<button class="btn-mega-def"  id="submit">Apply Now</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="step2"  style="display: none;">
+		<header>
+			<h2 class="h2">Installment</h2>
+			<p class="subtitle">Step 2 of 3</p>
+		</header>
+		<form class="field-set long-form" id="step-2" method="post" action="/gateway/">
+			<div class="field-long col-1-3">
+				<label for="amt"  class="is-active">Loan Amount</label>	
+				<select name="amt" class="required customSelectBox field-element" id="amt" >
+					<option value="" disabled="disabled">Select</option>
+					<option value="bc100">$100</option>
+					<option value="cq100">$200</option>
+					<option value="cc100">$300</option>
+					<option value="cc100">$400</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+						
+			<div class="field-long col-1-3">
+				<label for="fname">First Name:</label>
+				<input type="text" class="input-text field-element required" name="fname" id="fname" />				
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="lname">Last Name:</label>
+				<input type="text" class="input-text field-element required" name="lname" id="lname"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="email">Email:</label>
+				<input type="text" class="input-text field-element required" name="email" value="" id="email"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="address1">Address:</label>
+				<input type="text" class="input-text field-element required" name="address1" id="address1"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="zip">Zip:</label>
+				<input type="text" class="input-text field-element required" name="zip" value="" id="zip" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+						
+			<div class="field-long multi-field col-1-3">
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+				<label for="ph1" class="is-active">Phone Number:</label>
+					<input id="ph1" class="input-text field-element required" type="text" name="ph1" value=""   />
+					<input id="ph2"  class="input-text field-element required" type="text" name="ph2" value=""   />
+					<input id="ph3"  class="input-text field-element required" type="text" name="ph3" value=""   />
+			</div>
+			
+			<div class="field-long col-1-3">
+				
+				<label for="own_home" class="is-active">Home Owner:</label>
+				
+				<select class="required customSelectBox field-element"  id="own_home" name="own_home" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>
+			
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="lengthM"  class="is-active">Months at Address?</label>
+				<select class="required customSelectBox field-element"  id="home_lengthM" name="home_lengthM" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label class="is-active">Are you in active military?</label>
+				<div class="fiel-element radio-fields">	
+					<input id="militaryY" type="radio" name="military" value="yes" /><label class="radio-btn" for="militaryY">&nbsp;&nbsp;Yes&nbsp;&nbsp;</label>
+					<input id="militaryN" type="radio" name="military" value="no" /><label class="radio-btn" for="militaryN">&nbsp;&nbsp;No</label>
+				</div>
+			</div>
+			
+			<div class="field-long col-1-3">
+				
+				<label for="own_car"  class="is-active">Do you own a car?</label>
+				
+				<select class="required customSelectBox field-element"  id="own_car" name="own_car" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+			
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="license">Driver License # or State ID:</label>
+				<input id="license" type="text" class="input-text field-element required" name="license" value="" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-2">
+				
+				<label for="license_state"  class="is-active">ID State:</label>
+				
+				<select class="required customSelectBox field-element"  id="license_state" name="license_state" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-2">
+				
+				<label for="best_contact"  class="is-active">Best time to contact you</label>
+				
+				<select class="required customSelectBox field-element"  id="best_contact" name="best_contact" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			<div class="btn-wrapper">
+				<button id="continue2" class="btn-callout-def">Continue to Next Step</button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="step3" style="display: none;">
+		<header>
+			<h2 class="h2">Installment</h2>
+			<p class="subtitle">Step 2 of 3</p>
+		</header>
+		<form class="field-set long-form" id="step-3" method="post" action="/gateway/">
+			<div class="field-long field-select multi-field col-1-3">
+				<label for="dobM" class="is-active">Date of Birth:</label>
+					<select id="dobM" class="required customSelectBox field-element" name="dobM" >
+						<option value="" disabled="disabled" selected="selected">MM&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						<option value="01">01-Jan</option>
+						<option value="02">02-Feb</option>
+						<option value="03">03-Mar</option>
+						<option value="04">04-Apr</option>
+						<option value="05">05-May</option>
+						<option value="06">06-June</option>
+						<option value="07">07-July</option>
+						<option value="08">08-Aug</option>
+						<option value="09">09-Sep</option>
+						<option value="10">10-Oct</option>
+						<option value="11">11-Nov</option>
+						<option value="12">12-Dec</option>
+					</select>
+					<select  id="dobD" class="required customSelectBox field-element" name="dobD" >
+						<option value="" disabled="disabled" selected="selected">DD&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+					</select>
+					<select  id="dobY" class="required customSelectBox field-element" name="dobY" >
+						<option value="" disabled="disabled" selected="selected">YYYY&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						<option>1994</option>
+						<option>1993</option>
+						<option>1992</option>
+						<option>1991</option>
+						<option>1990</option>
+						<option>1989</option>
+						<option>1988</option>
+						<option>1987</option>
+						<option>1986</option>
+						<option>1985</option>
+						<option>1984</option>
+						<option>1983</option>
+						<option>1982</option>
+						<option>1981</option>
+						<option>1980</option>
+						<option>1979</option>
+						<option>1978</option>
+						<option>1977</option>
+						<option>1976</option>
+						<option>1975</option>
+						<option>1974</option>
+						<option>1973</option>
+						<option>1972</option>
+						<option>1971</option>
+						<option>1970</option>
+						<option>1969</option>
+						<option>1968</option>
+						<option>1967</option>
+						<option>1966</option>
+						<option>1965</option>
+						<option>1964</option>
+						<option>1963</option>
+						<option>1962</option>
+						<option>1961</option>
+						<option>1960</option>
+					</select>
+					<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long field-select col-1-3">
+				<label for="income" class="is-active">Monthly Income:</label>
+				<select class="required customSelectBox field-element" name="income" id="income" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+			
+			
+			<div class="field-long field-select col-1-3">
+				<label for="pay_period"  class="is-active">Pay Frequency:</label>
+				<select class="required customSelectBox field-element" id="pay_period" name="pay_period" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+						
+			<div class="field-long col-1-3">
+				<label for="position">Occupation:</label>	
+				<input type="text" id="position" class="input-text field-element" name="position" value=""  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+						
+			<div class="field-long col-1-3">
+				<label for="employer">Employer's Name:</label>	
+				<input type="text" class="input-text field-element required" id="employer" name="employer" value=""  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+						
+			<div class="field-long multi-field col-1-3">
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+				<label for="empph1"  class="is-active">Work Phone:</label>
+				<input id="empph1" class="input-text field-element" type="text" name="empph1" value="" placeholder="555"/>
+				<input id="empph2"  class="input-text field-element" type="text"  name="empph2" value="" placeholder="123"/>							<input id="empph3"  class="input-text field-element" type="text" name="empph3" value="" placeholder="1234"/>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="emp_city">Work City:</label>	
+				<input type="text" class="input-text field-element required" name="emp_city" id="emp_city"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				
+				<label for="emp_state"  class="is-active">Work State:</label>
+				
+				<select class="required customSelectBox field-element"  id="emp_state" name="emp_state" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i>
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="emp_zip">Work Zip:</label>
+				<input type="text" class="input-text field-element required" name="emp_zip" id="emp_zip"  value="" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="next_pay" class="is-active">Date of 1st Payday:</label>
+				<input type="text" id="next_pay" class="input-text field-element date-picker required" name="next_pay" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="2nd_pay" class="is-active">Date of 2nd Payday:</label>
+				<input type="text" id="2nd_pay" class="input-text field-element date-picker required" name="2nd_pay" />
+				<div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="dir_dep" class="is-active">Paycheck Type:</label>
+				<select class="required customSelectBox field-element"  id="dir_dep" name="dir_dep" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>	
+			
+						
+			<div class="field-long col-1-3">
+				<label for="emp_lengthM" class="is-active">Month's Employed:</label>
+				<select class="required customSelectBox field-element" id="emp_lengthM" name="emp_lengthM" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>	
+			
+			
+			<div class="field-long col-1-3">
+				<label for="emp_status" class="is-active">Income Type:</label>
+				<select class="required customSelectBox field-element"  id="emp_status" name="emp_status" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="bank">Bank Name:</label>
+				<input type="text" id="bank" name="bank" value="" class="input-text field-element required"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long  col-1-3">
+				<label for="routing">ABA Routing Number:</label>
+				<input type="text" id="routing" name="routing" value="" class="input-text field-element required"  />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="acct" >Account Number:</label>
+				<input type="text" id="acct" name="acct" value="" class="input-text field-element required"   />
+				<div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			<div class="field-long col-1-3">
+				<label for="emp_status" class="is-active">Type of Account:</label>
+				<select class="required customSelectBox field-element"  id="bank_type" name="bank_type" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>		
+			</div>
+			
+			<div class="field-long col-1-3">
+				<label for="bank_lengthM"  class="is-active">Months with Bank Account:</label>
+				<select class="required customSelectBox field-element"  id="bank_lengthM" name="bank_lengthM" >
+					<option value="" disabled="disabled" selected="selected">Select</option>
+					<option value="option">Option</option>
+				</select><i class="fa fa-arrow-circle-o-down field-select-icon"></i><div class="field-tooltip"></div><span class="field-icon"></span>
+			</div>
+			<div class="field-long multi-field col-1-3">
+					<div class="field-tooltip"></div><span class="field-icon"></span>
+				<label for="ssn1" class="is-active">Social Security:</label>
+					<input id="ssn1" class="required input-text field-element" type="text" name="ssn1"   />
+					<input id="ssn2" class="required input-text field-element" type="text" name="ssn2"    />
+					<input id="ssn3" class="required input-text field-element" type="text" name="ssn3"    />
+			</div>
+			<div class="disclaimer">
+				<div class="disclaimer-text">
+				By clicking the button below and submitting your form, you certify that you are at least 18 years old and agree to the <a href="#">E-consent</a>, <a href="#">Privacy Policy</a> & <a href="#">Terms of Use</a> that govern this web site and the service.
+				</div>
+			</div>
+			<div class="btn-wrapper">
+					<button id="continue3" class="btn-mega-def">Submit For Instant Approval</button>
+			</div>
+		</form>
+	</div>	
+</div>
+</div>
+
+<script src="public/js/jquery.min.js" type="text/javascript"></script>
+<script src="public/js/jquery.customSelect.js" type="text/javascript"></script>
+<script src="public/js/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
+<script src="public/js/jquery.validate.min.js" type="text/javascript"></script>
+
+<script src="public/js/scripts.min.js" type="text/javascript"></script>
+</body>
+</html>
